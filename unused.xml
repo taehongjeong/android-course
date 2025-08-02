@@ -1,0 +1,19 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/week3mystepcounter/MainActivity.kt</file>
+  <line>38</line>
+  <module>Week3MyStepCounter.app.main</module>
+  <package>com.example.week3mystepcounter</package>
+  <entry_point TYPE="class" FQNAME="com.example.week3mystepcounter.MainActivity.Companion" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>18</length>
+  <highlighted_element>companion object {</highlighted_element>
+  <problem_class id="unused" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is never used.</description>
+</problem>
+</problems>

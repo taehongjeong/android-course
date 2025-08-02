@@ -54,9 +54,7 @@ class NotificationHelper(private val context: Context) {
             .build()
         
         // 알림 권한 체크
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
-            ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) 
-            == PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
             try {
                 with(NotificationManagerCompat.from(context)) {
                     notify(TIMER_RUNNING_ID, notification)

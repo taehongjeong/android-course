@@ -1,0 +1,70 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/week3mystepcounter/MainActivity.kt</file>
+  <line>22</line>
+  <module>Week3MyStepCounter.app.main</module>
+  <package>com.example.week3mystepcounter</package>
+  <entry_point TYPE="class" FQNAME="com.example.week3mystepcounter.MainActivity" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>3</length>
+  <highlighted_element>/**</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/week3mystepcounter/MidnightResetReceiver.kt</file>
+  <line>16</line>
+  <module>Week3MyStepCounter.app.main</module>
+  <package>com.example.week3mystepcounter</package>
+  <entry_point TYPE="class" FQNAME="com.example.week3mystepcounter.MidnightResetReceiver" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>3</length>
+  <highlighted_element>/**</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/week3mystepcounter/StepCounterService.kt</file>
+  <line>18</line>
+  <module>Week3MyStepCounter.app.main</module>
+  <package>com.example.week3mystepcounter</package>
+  <entry_point TYPE="class" FQNAME="com.example.week3mystepcounter.StepCounterService" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>3</length>
+  <highlighted_element>/**</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/week3mystepcounter/StepCounterWidgetProvider.kt</file>
+  <line>14</line>
+  <module>Week3MyStepCounter.app.main</module>
+  <package>com.example.week3mystepcounter</package>
+  <entry_point TYPE="class" FQNAME="com.example.week3mystepcounter.StepCounterWidgetProvider" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>3</length>
+  <highlighted_element>/**</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+</problems>

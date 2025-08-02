@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@drawable/widget_background">
+
+    <!-- 앱 이름 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_title"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/widget_text_primary"
+        android:layout_marginBottom="4dp" />
+
+    <!-- 날짜 -->
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/widget_text_secondary"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 걸음 수 -->
+    <TextView
+        android:id="@+id/tv_step_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_steps"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/widget_text_primary" />
+
+    <!-- 걸음 라벨 -->
+    <TextView
+        android:id="@+id/tv_step_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/step_unit"
+        android:textSize="12sp"
+        android:textColor="@color/widget_text_secondary"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>
