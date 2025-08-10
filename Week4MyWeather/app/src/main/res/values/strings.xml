@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Week4MyWeather</string>
+    
+    <!-- 메인 화면 -->
+    <string name="weather_title">Weather</string>
+    <string name="hint_add_city">도시 추가</string>
+    <string name="hint_search_city">도시 검색…</string>
+    <string name="btn_add">추가</string>
+    <string name="btn_refresh">새로고침</string>
+    
+    <!-- 메시지 -->
+    <string name="message_no_weather">날씨 정보가 없습니다</string>
+    <string name="message_add_city_hint">도시를 추가하여 날씨를 확인하세요</string>
+    
+    <!-- 날씨 정보 -->
+    <string name="format_humidity">💧 %d%%</string>
+    <string name="format_wind_speed">💨 %.1fm/s</string>
+    
+    <!-- API 모드 -->
+    <string name="api_kma">기상청 API</string>
+    <string name="api_kma_weather">KmaWeather</string>
+    <string name="api_open_weather">OpenWeather</string>
+    
+    <!-- 콘텐츠 설명 -->
+    <string name="cd_search_icon">검색 아이콘</string>
+    <string name="cd_empty_state">빈 상태 이미지</string>
+    <string name="cd_weather_icon">날씨 아이콘</string>
+    <string name="cd_delete_city">도시 삭제</string>
+    
+    <!-- 샘플 텍스트 (tools) -->
+    <string name="sample_city">서울</string>
+    <string name="sample_weather">맑음</string>
+    <string name="sample_humidity">💧 60%%</string>
+    <string name="sample_wind">💨 2.5m/s</string>
+    <string name="sample_temp">25°</string>
+</resources>
