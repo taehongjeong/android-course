@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyScanner</string>
+    
+    <!-- Accessibility descriptions -->
+    <string name="capture_photo">사진 촬영</string>
+    <string name="go_back">뒤로 가기</string>
+    <string name="open_gallery">갤러리 열기</string>
+    <string name="open_camera">카메라 열기</string>
+    <string name="scanned_document">스캔된 문서</string>
+    
+    <!-- Camera Activity -->
+    <string name="camera_instruction">문서를 프레임 안에 맞춰주세요</string>
+    
+    <!-- Bottom Navigation -->
+
+    <!-- Home Fragment -->
+    <string name="scan_count">총 %d개의 스캔</string>
+    <string name="empty_state_message">아직 스캔한 문서가 없습니다\n우측 하단의 카메라 버튼을 눌러주세요</string>
+    
+    <!-- Photo Item -->
+    <string name="file_name">파일명</string>
+    <string name="date">날짜</string>
+</resources>
