@@ -32,6 +32,9 @@ class CameraActivity : AppCompatActivity() {
     
     private var imageCapture: ImageCapture? = null
     private var camera: Camera? = null
+    private var imageAnalyzer: ImageAnalysis? = null
+    private var isScanModeEnabled = false
+    private var isEdgeDetectionEnabled = false
     
     companion object {
         private const val TAG = "CameraActivity"
@@ -83,14 +86,55 @@ class CameraActivity : AppCompatActivity() {
             takePhoto()
         }
         
+        // 촬영 버튼 - 길게 누르면 엣지 검출 모드 토글
+        binding.btnCapture.setOnLongClickListener {
+            toggleEdgeDetection()
+            true
+        }
+        
         // 뒤로가기 버튼
         binding.btnBack.setOnClickListener {
             finish()
         }
         
-        // 갤러리 버튼
+        // 갤러리 버튼 - 길게 누르면 스캔 모드 토글
         binding.btnGallery.setOnClickListener {
             openGallery()
+        }
+        
+        binding.btnGallery.setOnLongClickListener {
+            toggleScanMode()
+            true
+        }
+    }
+    
+    private fun toggleScanMode() {
+        isScanModeEnabled = !isScanModeEnabled
+        
+        if (isScanModeEnabled) {
+            binding.processedImageView.visibility = View.VISIBLE
+            val modeText = if (isEdgeDetectionEnabled) "스캔 모드 활성화 (엣지 검출)" else "스캔 모드 활성화"
+            Toast.makeText(this, modeText, Toast.LENGTH_SHORT).show()
+        } else {
+            binding.processedImageView.visibility = View.GONE
+            binding.processedImageView.setImageBitmap(null)
+            Toast.makeText(this, "스캔 모드 비활성화", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun toggleEdgeDetection() {
+        isEdgeDetectionEnabled = !isEdgeDetectionEnabled
+        
+        val message = if (isEdgeDetectionEnabled) {
+            "엣지 검출 모드 활성화"
+        } else {
+            "일반 스캔 모드"
+        }
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        
+        // 스캔 모드가 활성화되어 있지 않으면 자동으로 활성화
+        if (!isScanModeEnabled && isEdgeDetectionEnabled) {
+            toggleScanMode()
         }
     }
     
@@ -113,6 +157,25 @@ class CameraActivity : AppCompatActivity() {
                 .setTargetRotation(windowManager.defaultDisplay.rotation)
                 .build()
             
+            // ImageAnalysis 설정
+            imageAnalyzer = ImageAnalysis.Builder()
+                .setTargetRotation(windowManager.defaultDisplay.rotation)
+                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                .build()
+                .also {
+                    it.setAnalyzer(cameraExecutor, DocumentAnalyzer(
+                        onImageProcessed = { processedBitmap ->
+                            // UI 스레드에서 이미지 업데이트
+                            runOnUiThread {
+                                if (isScanModeEnabled && processedBitmap != null) {
+                                    binding.processedImageView.setImageBitmap(processedBitmap)
+                                }
+                            }
+                        },
+                        isEdgeDetectionEnabled = { isEdgeDetectionEnabled }
+                    ))
+                }
+            
             // 카메라 선택 (후면 카메라)
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
             
@@ -120,9 +183,9 @@ class CameraActivity : AppCompatActivity() {
                 // 기존 바인딩 해제
                 cameraProvider.unbindAll()
                 
-                // 카메라 바인딩
+                // 카메라 바인딩 - imageAnalyzer 추가
                 camera = cameraProvider.bindToLifecycle(
-                    this, cameraSelector, preview, imageCapture
+                    this, cameraSelector, preview, imageCapture, imageAnalyzer
                 )
                 
             } catch (exc: Exception) {
